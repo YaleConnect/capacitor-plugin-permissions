@@ -1,0 +1,103 @@
+{
+  "api": {
+    "name": "PermissionsPlugin",
+    "slug": "permissionsplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "query",
+        "signature": "(permission: { name: Permission; }) => Promise<{ status: PermissionStatus; }>",
+        "parameters": [
+          {
+            "name": "permission",
+            "docs": "",
+            "type": "{ name: 'microphone'; }"
+          }
+        ],
+        "returns": "Promise<{ status: PermissionStatus; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PermissionStatus",
+          "Permission"
+        ],
+        "slug": "query"
+      },
+      {
+        "name": "request",
+        "signature": "(permission: { name: Permission; }) => Promise<{ status: Extract<PermissionStatus, 'granted' | 'denied'>; }>",
+        "parameters": [
+          {
+            "name": "permission",
+            "docs": "",
+            "type": "{ name: 'microphone'; }"
+          }
+        ],
+        "returns": "Promise<{ status: 'granted' | 'denied'; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Extract",
+          "PermissionStatus",
+          "Permission"
+        ],
+        "slug": "request"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [
+    {
+      "name": "PermissionStatus",
+      "slug": "permissionstatus",
+      "docs": "",
+      "types": [
+        {
+          "text": "'granted'",
+          "complexTypes": []
+        },
+        {
+          "text": "'denied'",
+          "complexTypes": []
+        },
+        {
+          "text": "'notDetermined'",
+          "complexTypes": []
+        },
+        {
+          "text": "'prompt'",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "Permission",
+      "slug": "permission",
+      "docs": "",
+      "types": [
+        {
+          "text": "'microphone'",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "Extract",
+      "slug": "extract",
+      "docs": "Extract from T those types that are assignable to U",
+      "types": [
+        {
+          "text": "T extends U ? T : never",
+          "complexTypes": [
+            "T",
+            "U"
+          ]
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": []
+}
